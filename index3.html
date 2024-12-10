@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with Air Quality</title>
+    
+    <!-- Include Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <style>
+        /* General styling for the page */
+       
+
+        /* Create a container for the map with a fixed height */
+        .map-section {
+            width: 50%; /* Full width of the container */
+            height: 400px; /* Adjust height as per your requirement */
+            margin: 20px auto; /* Optional: Center the map container */
+            border: 2px solid #ccc; /* Optional: Styling for the container */
+        }
+
+        #map {
+            height: 100%; /* Make map fill the container */
+            width: 100%; /* Full width of the parent container */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section where the map is displayed -->
+    <div class="map-section">
+        <div id="map"></div>
+    </div>
+
+    <script>
+        // Initialize the map with a default center (Delhi coordinates) and zoom level 10
+        const map = L.map('map').setView([28.6139, 77.2090], 10);
+
+        // Add a tile layer from OpenStreetMap with a max zoom level of 19
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // API Key and URL for Air Quality Data (OpenWeather API)
+        const apiKey2 = '6309a7fdbbb54a28d9342fa4859e15c0';
+        const url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=28.6139&lon=77.2090&appid=${apiKey2}`;
+
+        // Fetch air pollution data
+        fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                console.log('API Response:', data);
+                const { list } = data;
+                const pollution = list[0].main.aqi;
+                const aqiText = ['Unknown', 'Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'][pollution] || 'Unknown';
+
+                // Add a marker with a popup to the map
+                L.marker([28.6139, 77.2090])
+                    .addTo(map)
+                    .bindPopup(`Air Quality Index: ${pollution} (${aqiText})`)
+                    .openPopup();
+            })
+            .catch(error => console.error('API Fetch Error:', error));
+
+        // Dynamic fetch on map click (to get air quality at clicked coordinates)
+        map.on('click', function(e) {
+            const { lat, lng } = e.latlng;
+            console.log(`Clicked Location: lat=${lat}, lon=${lng}`);
+            const dynamicUrl = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lng}&appid=${apiKey2}`;
+
+            fetch(dynamicUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Dynamic API Response:', data);
+                    const { list } = data;
+                    const pollution = list[0].main.aqi;
+                    const aqiText = ['Unknown', 'Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'][pollution] || 'Unknown';
+
+                    // Add a marker to the clicked location with popup showing AQI info
+                    L.marker([lat, lng])
+                        .addTo(map)
+                        .bindPopup(`Air Quality Index: ${pollution} (${aqiText})`)
+                        .openPopup();
+                })
+                .catch(error => console.error('Dynamic API Fetch Error:', error));
+        });
+    </script>
+
+</body>
+</html>
