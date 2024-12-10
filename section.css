@@ -1,0 +1,384 @@
+/*current-air-quality-section-css*/
+/* Container and general styling */
+#current-air-quality {
+  background-color: #e7eb90;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Real-time AQI Data */
+.aqi-data {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aqi-data h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.aqi-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.aqi-status {
+  font-size: 20px;
+  color: #666;
+}
+
+/* AQI Map */
+.aqi-map {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aqi-map h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 300px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #777;
+}
+
+/* Current Pollution Levels */
+.pollution-levels {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.pollution-levels h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+tr:hover td {
+  background-color: #f0f0f0;
+}
+
+/* air-quality-index-explained-css*/
+/* Container and general styling */
+#aqi-explained {
+  background-color: #e7eb90;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* AQI Information Section */
+.aqi-info {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aqi-info h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.aqi-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* AQI Levels Table */
+.aqi-levels {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aqi-levels h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid black;
+}
+
+th {
+  background-color: #4caf50;
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+  background-color: #f1f1f1;
+}
+
+tr:hover td {
+  background-color: #f0f0f0;
+}
+
+/* AQI Calculation Information */
+.aqi-calculation {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.aqi-calculation h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.aqi-calculation ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.aqi-calculation p {
+  font-size: 16px;
+  color: #555;
+}
+
+/*home-section-css*/
+/* Container and general styling */
+#home {
+  background-color: #e7eb90;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Introduction to Air Quality */
+.introduction {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.introduction h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.introduction p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Importance of Monitoring Air Quality */
+.importance-monitoring {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.importance-monitoring h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.importance-monitoring p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.importance-monitoring ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.importance-monitoring li {
+  font-size: 16px;
+  color: #555;
+}
+
+/*forecast-section-css*/
+/* Container and general styling */
+#forecast {
+  background-color: #e7eb90;
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Air Quality Forecast */
+.air-quality-forecast {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.air-quality-forecast h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.air-quality-forecast p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.forecast-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.forecast-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.forecast-btn:hover {
+  background-color: #45a049;
+}
+
+.forecast-data {
+  background-color: #eaeaea;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.forecast-data h4 {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.forecast-data p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Weather Conditions */
+.weather-conditions {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weather-conditions h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.weather-conditions p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.weather-conditions ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.weather-conditions li {
+  font-size: 16px;
+  color: #555;
+}
