@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Example</title>
+    <link rel="stylesheet" href="/navbar.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    
+    rel="stylesheet"
+  />
+ <style>
+ /* Modal styles */
+ .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      width: 80%;
+      height: 80%;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1001;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Blur background */
+    .blur-background {
+      filter: blur(5px);
+    }
+
+    /* Close button */
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #FF4136;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .close-modal:hover {
+      background: #D32F2F;
+    }
+ </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo">
+        <img src="/वाU check img.png" alt="logo" />
+      </div>
+      <button class="sidebar-btn active" data-target="home">Home</button>
+      <button class="sidebar-btn" data-target="current-air-quality">Current Air Quality</button>
+      <button class="sidebar-btn" data-target="air-quality-prediction">Air Quality Prediction</button>
+      <button class="sidebar-btn" data-target="live-map" id="open-modal">Live Map</button>
+      <button class="sidebar-btn" data-target="content">Content</button>
+      <button class="sidebar-btn" data-target="help">Help</button>
+    </div>
+    <div class="content">
+      <div id="home" class="page active">
+        
+        <p>Welcome to the Home Page!</p>
+      
+      </div>
+      <div id="current-air-quality" class="page">
+        
+        
+        <div class="container mt-5">
+          <!-- Input for City -->
+          <section class="home">
+            <h1>Current Air Quality</h1>
+            <div class="homeHeader">
+              <label for="city-input">Enter City Name:</label>
+              <input
+                type="text"
+                id="city-input"
+                class="form-control city-input"
+                placeholder="e.g., London"
+              />
+              <button id="fetch-weather-btn" class="btn btn-primary mt-3">Show Air Quality</button>
+            </div>
+          </section>
+          <section class="airdata">
+
+ <!-- Weather Widget -->
+  <div class="widgetsection">
+    <div class="weather-widget card">
+      <div class="card-body">
+        <div id="weather-background" class="weather-bg">
+          <div class="widget-header">
+            <h2 id="city-name" class="city-name">City Name</h2>
+            <img id="weather-icon" class="weather-icon" alt="Weather Icon" />
+          </div>
+          <div class="weather-details">
+            <p id="weather-description" class="weather-description">Description</p>
+            <h1 id="temperature" class="temperature">0°C</h1>
+            <div class="additional-info">
+              <p><strong>Wind:</strong> <span id="wind-speed">0 km/h</span></p>
+              <p><strong>Humidity:</strong> <span id="humidity">0%</span></p>
+              <p><strong>Pressure:</strong> <span id="pressure">0 hPa</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+<div class="airdataTable">
+  <table id="result-table" class="hidden">
+    <thead>
+      <tr>
+        <th>Component</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+          </section>
+      
+         
+       
+      </div>
+      <div id="air-quality-prediction" class="page">
+        <h1>Air Quality Prediction</h1>
+        <p>Details about air quality prediction go here.</p>
+      </div>
+      <div id="live-map" class="page">
+       <section class="liveMap-section">
+         <!-- Modal Popup -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-modal">Close</button>
+      <!-- Display content of index3.html -->
+      <iframe src="liveMap.html" title="Live Map"></iframe>
+    </div>
+  </div>
+
+
+       </section>
+  
+      </div>
+      <div id="content" class="page">
+        <h1>Content</h1>
+        <p>Details about content go here.</p>
+      </div>
+      <div id="help" class="page">
+        <h1>Help</h1>
+        <p>Help content goes here.</p>
+      </div>
+    </div>
+  
+
+
+    <script src="/script.js"/>
+   
+  </body>
+</html>
